@@ -1,0 +1,16 @@
+<div class="chat-window">
+    <h2>Welcome, {{ username }}</h2>
+    <div class="message-input">
+      <input [(ngModel)]="recipient" placeholder="Recipient" />
+      <textarea [(ngModel)]="message" placeholder="Type your message"></textarea>
+      <button (click)="sendMessage()">Send</button>
+    </div>
+    <div class="messages">
+      <h3>Messages:</h3>
+      <ul>
+        <li *ngFor="let msg of messages">
+          {{ msg.sender }}: {{ msg.message }}
+        </li>
+      </ul>
+    </div>
+  </div>
